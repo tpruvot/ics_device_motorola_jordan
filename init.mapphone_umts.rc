@@ -27,6 +27,9 @@ on fs
 # take a wakelock on boot until PM is working
 	write /sys/power/wake_lock hack
 
+# enable ADB
+	write /dev/usb_device_mode charge_adb
+
 service pvrsrvinit /vendor/bin/pvrsrvinit
 	class core
 	user root
