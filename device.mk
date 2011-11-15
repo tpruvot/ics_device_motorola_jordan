@@ -15,37 +15,34 @@
 #
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := device/ti/panda/kernel
+LOCAL_KERNEL := device/ti/jordan/kernel
 else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
 PRODUCT_COPY_FILES := \
 	$(LOCAL_KERNEL):kernel \
-	device/ti/panda/init.omap4pandaboard.rc:root/init.omap4pandaboard.rc \
-	device/ti/panda/init.omap4pandaboard.usb.rc:root/init.omap4pandaboard.usb.rc \
-	device/ti/panda/ueventd.omap4pandaboard.rc:root/ueventd.omap4pandaboard.rc \
-	device/ti/panda/media_profiles.xml:system/etc/media_profiles.xml \
+	device/ti/jordan/init.mapphone_umts.rc:root/init.mapphone_umts.rc \
+	device/ti/jordan/init.usb.rc:root/init.usb.rc \
+	device/ti/jordan/ueventd.rc:root/ueventd.rc \
+	device/ti/jordan/media_profiles.xml:system/etc/media_profiles.xml \
 	frameworks/base/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
 	frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
 	frameworks/base/data/etc/android.hardware.usb.accessory.xml:system/etc/permissions/android.hardware.usb.accessory.xml
 
 PRODUCT_PACKAGES := \
-        make_ext4fs \
 	com.android.future.usb.accessory
 
 PRODUCT_PROPERTY_OVERRIDES := \
-	wifi.interface=wlan0 \
+	wifi.interface=tiwlan0 \
 	hwui.render_dirty_regions=false
 
-PRODUCT_CHARACTERISTICS := tablet,nosdcard
-
 DEVICE_PACKAGE_OVERLAYS := \
-    device/ti/panda/overlay
+	device/ti/jordan/overlay
 
 #HWC Hal
 PRODUCT_PACKAGES += \
-    hwcomposer.omap4
+	hwcomposer.default
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
@@ -54,7 +51,7 @@ PRODUCT_PACKAGES += \
 	com.android.future.usb.accessory
 
 PRODUCT_PACKAGES += \
-	audio.primary.panda \
+	audio.primary.jordan \
 	audio.a2dp.default \
 	libaudioutils
 
@@ -65,10 +62,10 @@ PRODUCT_PACKAGES += \
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
-	make_ext4fs
+	make_ext4fs \
+	make_ext3fs \
 
-$(call inherit-product-if-exists, vendor/ti/panda/device-vendor.mk)
-$(call inherit-product, frameworks/base/build/tablet-dalvik-heap.mk)
-$(call inherit-product, hardware/ti/omap4xxx/omap4.mk)
-$(call inherit-product-if-exists, vendor/ti/proprietary/omap4/ti-omap4-vendor.mk)
+$(call inherit-product-if-exists, vendor/ti/jordan/device-vendor.mk)
+$(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
+$(call inherit-product-if-exists, vendor/ti/proprietary/omap3/ti-omap3-vendor.mk)
 $(call inherit-product-if-exists, vendor/ti/proprietary/wl12xx/ti-wl12xx-vendor.mk)

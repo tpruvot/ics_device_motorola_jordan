@@ -1,4 +1,4 @@
-import init.omap4pandaboard.usb.rc
+import init.usb.rc
 
 on early-init
     export EXTERNAL_STORAGE /mnt/sdcard
@@ -20,9 +20,9 @@ on boot
 	chmod 0666 /dev/pvrsrvkm
 
 on fs
-	mount ext4 /dev/block/platform/omap/omap_hsmmc.0/by-name/system /system wait ro
-	mount ext4 /dev/block/platform/omap/omap_hsmmc.0/by-name/userdata /data wait noatime nosuid nodev
-	mount ext4 /dev/block/platform/omap/omap_hsmmc.0/by-name/cache /cache wait noatime nosuid nodev
+	mount ext3 /dev/block/platform/omap/omap_hsmmc.1/by-num/p21 /system wait ro
+	mount ext3 /dev/block/platform/omap/omap_hsmmc.1/by-num/p25 /data wait noatime nosuid nodev
+	mount ext3 /dev/block/platform/omap/omap_hsmmc.1/by-num/p24 /cache wait noatime nosuid nodev
 
 # take a wakelock on boot until PM is working
 	write /sys/power/wake_lock hack
@@ -39,7 +39,7 @@ service pvrsrvinit /vendor/bin/pvrsrvinit
 service sdcard /system/bin/sdcard /data/media 1023 1023
     class late_start
 
-service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf -dd
+service wpa_supplicant /system/bin/wpa_supplicant -Dnl80211 -itiwlan0 -c/data/misc/wifi/wpa_supplicant.conf -dd
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
     oneshot

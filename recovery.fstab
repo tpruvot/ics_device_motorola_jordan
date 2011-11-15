@@ -1,10 +1,11 @@
 # mount point	fstype		device
 
-/system		ext4		/dev/block/platform/omap/omap_hsmmc.0/by-name/system
-/cache		ext4		/dev/block/platform/omap/omap_hsmmc.0/by-name/cache
-/data		ext4		/dev/block/platform/omap/omap_hsmmc.0/by-name/userdata
-/misc 		mtd 		misc
+/system		emmc		/dev/block/platform/omap/omap_hsmmc.1/by-num/p21
+/cache		emmc		/dev/block/platform/omap/omap_hsmmc.1/by-num/p24
+/data		emmc		/dev/block/platform/omap/omap_hsmmc.1/by-num/p25
+#/pds		emmc		/dev/block/platform/omap/omap_hsmmc.1/by-num/p7
+#/misc 		mtd		misc
 /boot		mtd		boot
 /recovery	mtd		recovery
-/bootloader	mtd		bootloader
-/radio		mtd		radio
+#/bootloader	mtd		bootloader
+#/radio		mtd		radio

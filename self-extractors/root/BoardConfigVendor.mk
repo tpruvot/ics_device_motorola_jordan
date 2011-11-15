@@ -12,6 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_STEM := panda/BoardConfigPanda.mk
+LOCAL_STEM := jordan/BoardConfigPanda.mk
 
 -include vendor/imgtec/$(LOCAL_STEM)

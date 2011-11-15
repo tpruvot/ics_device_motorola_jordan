@@ -14,13 +14,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-(cd ../../../../out/target/product/panda ; zip -r ../../../../device/ti/panda/self-extractors/full_panda-pseudo_ota.zip system)
+(cd ../../../../out/target/product/jordan ; zip -r ../../../../device/ti/jordan/self-extractors/full_jordan-pseudo_ota.zip system)
 
 # 147483 = IRK19
-ZIP=full_panda-pseudo_ota.zip
+ZIP=full_jordan-pseudo_ota.zip
 BUILD=master
-ROOTDEVICE=panda
-DEVICE=panda
+ROOTDEVICE=jordan
+DEVICE=jordan
 MANUFACTURER=ti
 
 for COMPANY in imgtec
@@ -34,10 +34,10 @@ do
   imgtec)
     TO_EXTRACT="\
             system/vendor/bin/pvrsrvinit \
-            system/vendor/lib/egl/libEGL_POWERVR_SGX540_120.so \
-            system/vendor/lib/egl/libGLESv1_CM_POWERVR_SGX540_120.so \
-            system/vendor/lib/egl/libGLESv2_POWERVR_SGX540_120.so \
-            system/vendor/lib/hw/gralloc.omap4.so \
+            system/vendor/lib/egl/libEGL_POWERVR_SGX530_125.so \
+            system/vendor/lib/egl/libGLESv1_CM_POWERVR_SGX530_125.so \
+            system/vendor/lib/egl/libGLESv2_POWERVR_SGX530_125.so \
+            system/vendor/lib/hw/gralloc.omap3.so \
             system/vendor/lib/libglslcompiler.so \
             system/vendor/lib/libIMGegl.so \
             system/vendor/lib/libpvr2d.so \

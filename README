@@ -9,27 +9,28 @@ Power supply
 Mini-USB to the PC
 USB keyboard and mouse
 Ethernet, on a network that supports DHCP
-HDMI-to-DVI-D on the P1 DVI-D connector
 
 # Initial setup, part 1: build fastboot
 source build/envsetup.sh
-lunch full_panda-eng
-make fastboot
+lunch full_jordan-eng
+make otapackage
 
-# Initial setup, part 2:
+#make fastboot (DONT DO THAT for jordan !)
+
+# Initial setup, part 2 (DONT DO THAT for jordan !)
 # With no SD card inserted, plug USB first, then the power cord,
 #   and load fastboot over USB:
-device/ti/panda/usbboot device/ti/panda/bootloader.bin
+# device/ti/panda/usbboot device/ti/panda/bootloader.bin
 
-# Initial setup, part 3:
+# Initial setup, part 3 (DONT DO THAT for jordan !)
 # Once in fastboot, insert and initialize an SD card (4GB or greater):
-fastboot oem format
-fastboot flash xloader device/ti/panda/xloader.bin
-fastboot flash bootloader device/ti/panda/bootloader.bin
+#fastboot oem format
+#fastboot flash xloader device/ti/panda/xloader.bin
+#fastboot flash bootloader device/ti/panda/bootloader.bin
 
-# Build and flash, part 1: Do a build
+# Build and flash, part 1: Do a build (DONT DO THAT for jordan !)
 source build/envsetup.sh
-lunch full_panda-eng
+lunch full_jordan-eng
 make
 
 # Build and flash, part 2: Flash
@@ -47,7 +48,7 @@ adb shell dhcpcd eth0
 
 =================================
 
-KNOWN ISSUES
+KNOWN ISSUES (panda)
 
 fastboot -w doesn't work. Neither does fastboot erase userdata. They don't
 write a valid filesystem.

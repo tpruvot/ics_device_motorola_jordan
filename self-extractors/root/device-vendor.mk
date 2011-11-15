@@ -12,6 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_STEM := panda/device-panda.mk
+LOCAL_STEM := jordan/device-jordan.mk
 
 $(call inherit-product-if-exists, vendor/imgtec/$(LOCAL_STEM))

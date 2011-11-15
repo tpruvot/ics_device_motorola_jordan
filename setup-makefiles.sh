@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE=panda
+DEVICE=jordan
 MANUFACTURER=ti
 
 mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE
