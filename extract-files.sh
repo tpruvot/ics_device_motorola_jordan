@@ -19,21 +19,25 @@
 DEVICE=jordan
 MANUFACTURER=ti
 
+#DEVICE_ROOT=/system/vendor
+DEVICE_ROOT=/system
+LOCAL_PROPS=../../../vendor
+
 mkdir -p ../../../vendor/$MANUFACTURER/$DEVICE/proprietary
-adb pull /system/vendor/bin/pvrsrvinit ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/pvrsrvinit
+adb pull $DEVICE_ROOT/bin/pvrsrvinit ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/pvrsrvinit
 chmod 755 ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/pvrsrvinit
-adb pull /system/vendor/lib/egl/libEGL_POWERVR_SGX530_125.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libEGL_POWERVR_SGX530_125.so
-adb pull /system/vendor/lib/egl/libGLESv1_CM_POWERVR_SGX530_125.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libGLESv1_CM_POWERVR_SGX530_125.so
-adb pull /system/vendor/lib/egl/libGLESv2_POWERVR_SGX530_125.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libGLESv2_POWERVR_SGX530_125.so
-adb pull /system/vendor/lib/hw/gralloc.omap3.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/gralloc.omap3.so
-adb pull /system/vendor/lib/libglslcompiler.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libglslcompiler.so
-adb pull /system/vendor/lib/libIMGegl.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libIMGegl.so
-adb pull /system/vendor/lib/libpvr2d.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libpvr2d.so
-adb pull /system/vendor/lib/libpvrANDROID_WSEGL.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libpvrANDROID_WSEGL.so
-adb pull /system/vendor/lib/libPVRScopeServices.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libPVRScopeServices.so
-adb pull /system/vendor/lib/libsrv_init.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libsrv_init.so
-adb pull /system/vendor/lib/libsrv_um.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libsrv_um.so
-adb pull /system/vendor/lib/libusc.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libusc.so
+adb pull $DEVICE_ROOT/lib/egl/libEGL_POWERVR_SGX530_125.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libEGL_POWERVR_SGX530_125.so
+adb pull $DEVICE_ROOT/lib/egl/libGLESv1_CM_POWERVR_SGX530_125.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libGLESv1_CM_POWERVR_SGX530_125.so
+adb pull $DEVICE_ROOT/lib/egl/libGLESv2_POWERVR_SGX530_125.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libGLESv2_POWERVR_SGX530_125.so
+adb pull $DEVICE_ROOT/lib/hw/gralloc.omap3.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/gralloc.omap3.so
+adb pull $DEVICE_ROOT/lib/libglslcompiler.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libglslcompiler.so
+adb pull $DEVICE_ROOT/lib/libIMGegl.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libIMGegl.so
+adb pull $DEVICE_ROOT/lib/libpvr2d.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libpvr2d.so
+adb pull $DEVICE_ROOT/lib/libpvrANDROID_WSEGL.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libpvrANDROID_WSEGL.so
+adb pull $DEVICE_ROOT/lib/libPVRScopeServices.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libPVRScopeServices.so
+adb pull $DEVICE_ROOT/lib/libsrv_init.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libsrv_init.so
+adb pull $DEVICE_ROOT/lib/libsrv_um.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libsrv_um.so
+adb pull $DEVICE_ROOT/lib/libusc.so ../../../vendor/$MANUFACTURER/$DEVICE/proprietary/libusc.so
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__MANUFACTURER__/$MANUFACTURER/g > ../../../vendor/$MANUFACTURER/$DEVICE/device-vendor-blobs.mk
 # Copyright (C) 2010 The Android Open Source Project
