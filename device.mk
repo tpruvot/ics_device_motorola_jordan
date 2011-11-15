@@ -65,6 +65,9 @@ PRODUCT_PACKAGES += \
 	make_ext4fs \
 	make_ext3fs \
 
+# Our blobs...
+$(call inherit-product-if-exists, device/ti/jordan/prebuilt.mk)
+
 $(call inherit-product-if-exists, vendor/ti/jordan/device-vendor.mk)
 $(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
 $(call inherit-product-if-exists, vendor/ti/proprietary/omap3/ti-omap3-vendor.mk)
