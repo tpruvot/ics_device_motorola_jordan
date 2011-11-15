@@ -14,4 +14,6 @@
 # limitations under the License.
 #
 
+export USE_CCACHE=true
+
 add_lunch_combo full_jordan-eng
