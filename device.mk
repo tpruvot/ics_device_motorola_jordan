@@ -65,6 +65,11 @@ PRODUCT_PACKAGES += \
 	make_ext4fs \
 	make_ext3fs \
 
+# External projects
+PRODUCT_PACKAGES += \
+	static_busybox \
+	bootmenu \
+
 # Our blobs...
 $(call inherit-product-if-exists, device/ti/jordan/prebuilt.mk)
 

@@ -22,4 +22,5 @@ PRODUCT_COPY_FILES += \
 	${JORDAN_DEVICE}/prebuilt/usr/keypad.kl:system/usr/keylayout/umts_jordan-keypad.kl \
 	${JORDAN_DEVICE}/prebuilt/usr/cpcap.kl:system/usr/keylayout/cpcap-key.kl \
 	${JORDAN_DEVICE}/prebuilt/bin/recovery:system/bootmenu/recovery/sbin/recovery_stable \
+	${JORDAN_DEVICE}/prebuilt/bin/busybox:system/bin/busybox \
 
