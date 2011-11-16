@@ -53,10 +53,10 @@ WPA_SUPPL_APPROX_USE_RSSI   := true
 
 BOARD_USE_YUV422I_DEFAULT_COLORFORMAT := true
 BOARD_EGL_CFG := device/ti/jordan/egl.cfg
-BOARD_CUSTOM_USB_CONTROLLER := ../../device/motorola/jordan/UsbController.cpp
+BOARD_CUSTOM_USB_CONTROLLER := ../../device/ti/jordan/UsbController.cpp
 
 BOARD_HAVE_BLUETOOTH := true
-BOARD_CUSTOM_BLUEDROID := ../../../device/motorola/jordan/bluedroid.c
+BOARD_CUSTOM_BLUEDROID := ../../../device/ti/jordan/bluedroid.c
 
 BOARD_BOOTIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x00280000)
 BOARD_RECOVERYIMAGE_MAX_SIZE := $(call image-size-from-data-size,0x00500000)
@@ -78,7 +78,7 @@ BOARD_USE_KINETO_COMPATIBILITY := true
 BOARD_USES_BOOTMENU := true
 
 # Recovery
-BOARD_CUSTOM_RECOVERY_KEYMAPPING:= ../../device/motorola/jordan/recovery_ui.c
+BOARD_CUSTOM_RECOVERY_KEYMAPPING:= ../../device/ti/jordan/recovery_ui.c
 BOARD_HAS_NO_MISC_PARTITION := true
 BOARD_RECOVERY_IGNORE_BOOTABLES := true
 BOARD_HAS_SMALL_RECOVERY := true
