@@ -48,7 +48,6 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 PRODUCT_PACKAGES += \
 	librs_jni \
-	com.android.future.usb.accessory
 
 PRODUCT_PACKAGES += \
 	audio.primary.jordan \
